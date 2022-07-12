@@ -30,4 +30,12 @@ describe('ProductService', () => {
       expect(service.findAll()).toEqual([utilMock.productMockResult[0]]);
     });
   });
+  describe('findOne', () => {
+    it('deve retornar um produto', () => {
+      expect(service.findOne(1)).toEqual(utilMock.productMockResult[0]);
+    });
+    it('deve retornar um null', () => {
+      expect(service.findOne(2)).toEqual(undefined);
+    });
+  });
 });
