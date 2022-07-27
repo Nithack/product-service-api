@@ -8,8 +8,8 @@ import {
   Delete,
 } from '@nestjs/common';
 import { ProductService } from './product.service';
-import { CreateProductDto } from './dto/create-product.dto';
-import { UpdateProductDto } from './dto/update-product.dto';
+import { CreateProductDto } from './dtos/create-product.dto';
+import { UpdateProductDto } from './dtos/update-product.dto';
 
 @Controller('product')
 export class ProductController {
@@ -35,8 +35,8 @@ export class ProductController {
     return this.productService.update(+id, updateProductDto);
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.productService.remove(+id);
-  }
+  // @Delete(':id')
+  // remove(@Param('id') id: string) {
+  //   return this.productService.remove(+id);
+  // }
 }
